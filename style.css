@@ -1,7 +1,26 @@
 html, body {
   margin: 0;
   padding: 0;
+  caret-color: white;
+  text-align: center;
 }
-canvas {
+/* canvas {
   display: block;
+} */
+
+container {
+  text-align: center;
+}
+
+h1{
+  color: aqua;
+  font-family: sans-serif;
+  text-transform: uppercase;
+}
+
+h3{
+  color: aquamarine;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  padding: 5px;
 }

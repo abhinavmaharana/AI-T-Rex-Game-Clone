@@ -35,19 +35,19 @@ function gotCommand(error, results){
   }
 
 }
-
-function keyPressed(){
-  if (key == ' '){
-    unicorn.jump();
-  }
-} 
-
   
 function draw() {
   // if(random(1) < 0.005){
   //   trains.push(new Train());
   // }
   background(bImg);
+  // image(bImg, bX, 0, bImg.width, height);
+  // if (bX <= -bImg.width + width) {
+  //   image(bImg, bX + bImg.width, 0, bImg.width, height);
+  //   if (bX <= -bImg.width) {
+  //     bX = 0;
+  //   }
+  // }
   for (let t of trains){
     t.move();
     t.show(); 
@@ -60,3 +60,10 @@ function draw() {
   unicorn.move();
   
 }
+
+function keyPressed(){
+  if (key == ' '){
+    unicorn.jump();
+    if (isOver) reset(); 
+  }
+} 
