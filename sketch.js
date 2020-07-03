@@ -3,6 +3,7 @@ let uImg;//bird image
 let tImg;//obstacle image
 let bImg;//background
 let trains = [];
+var score = 0;
 let soundClassifier;
 
 
@@ -15,12 +16,12 @@ function preload(){
   bImg = loadImage('skyBackground.png');
 }
 
-function mousePressed(){
-  trains.push(new Train());
-}
+// function mousePressed(){
+//   trains.push(new Train());
+// }
 
 function setup() {
-  createCanvas(800, 450);
+  createCanvas(1000, 500);
   unicorn = new Unicorn();
   soundClassifier.classify(gotCommand);
 }
@@ -37,9 +38,9 @@ function gotCommand(error, results){
 }
   
 function draw() {
-  // if(random(1) < 0.005){
-  //   trains.push(new Train());
-  // }
+  if(random(1) < 0.005){
+    trains.push(new Train());
+  }
   background(bImg);
   // image(bImg, bX, 0, bImg.width, height);
   // if (bX <= -bImg.width + width) {
@@ -67,3 +68,9 @@ function keyPressed(){
     if (isOver) reset(); 
   }
 } 
+
+function drawScore() {
+  ctx.font = "16px Arial";
+  ctx.fillStyle = "#0095DD";
+  ctx.fillText("Score: "+score, 8, 20);
+}
